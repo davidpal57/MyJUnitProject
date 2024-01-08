@@ -39,12 +39,17 @@ public class CalculatorTest {
         Assertions.assertEquals(result, 2);
     }
 
+    @AfterEach
+    public void afterEachMethod(){
+        System.out.println("AfterEach");
+    }
     @AfterAll
     public static void afterAllMethod(){
         System.out.println("AfterAll");
     }
-    @AfterEach
-    public void afterEachMethod(){
-        System.out.println("AfterEach");
+    @Test
+    public void moduloTest(){
+        int result = calculator.modulo(9,2);
+        Assertions.assertEquals(1,result);
     }
 }
